@@ -1,10 +1,15 @@
 header{
   display: flex;
   justify-content: flex-start;
+  background-color: $navy;
+  color:white;
+  a{
+    text-decoration: none;
+    color:white;
+  }
 }
 
-.logo{
-  height:3rem;
+.fa-book{
   margin: 1rem 1rem;
 }
 
@@ -36,6 +41,13 @@ header{
 
 .delete-btn{
   width:100%;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  background-color: $teal;
+  color:white;
+  &:hover{
+
+  }
 }
 
 form{

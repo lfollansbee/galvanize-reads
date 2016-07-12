@@ -1,9 +1,13 @@
 header {
   display: flex;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  background-color: #162855;
+  color: white; }
+  header a {
+    text-decoration: none;
+    color: white; }
 
-.logo {
-  height: 3rem;
+.fa-book {
   margin: 1rem 1rem; }
 
 .book {
@@ -27,7 +31,11 @@ header {
   color: red; }
 
 .delete-btn {
-  width: 100%; }
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  background-color: #236367;
+  color: white; }
 
 form {
   width: 50%; }

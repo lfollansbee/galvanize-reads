@@ -6,5 +6,13 @@ module.exports = {
   },
   getGenres: function(){
     return knex('genre').select()
-  }
+  },
+  addBook: function(newBook){
+  return knex('book').insert({
+    title: newBook.title,
+    genre_id: newBook.genre_id,
+    description: newBook.description,
+    cover_url: newBook.cover_url
+  })
+},
 }

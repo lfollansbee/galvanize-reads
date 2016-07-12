@@ -5,14 +5,17 @@
       <input type="text" id="title" name="title">
 
     <label for="genre">Genre</label>
-      <input type="text" id="genre" name="genre">
+      <select id="genre" name="genre_id">
+        {{#each genre}}
+        <option value="{{this.id}}">{{this.name}}</option>
+        {{/each}}
+      </select>
 
     <label for="description">Description</label>
-      <input type="text" id="description" name="description">
+      <textarea rows="5" id="description" name="description"></textarea>
 
     <label for="cover_url">Cover Image URL</label>
-      <input type="text" id="cover_url" name="cover_url">
-
+      <input type="url" id="cover_url" name="cover_url">
 
     <button type="submit">Add</button>
   </form>

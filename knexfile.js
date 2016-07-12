@@ -3,7 +3,7 @@ require('dotenv').load();
 module.exports = {
  development: {
    client: 'pg',
-   connection: 'postgres://localhost/DATABASE_NAME'
+   connection: 'postgres://localhost/galvanize-reads'
  },
  production:{
    client: 'pg',

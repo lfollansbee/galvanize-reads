@@ -8,6 +8,23 @@ header{
   margin: 1rem 1rem;
 }
 
+.book{
+  width:50%;
+}
+
+.book-list{
+  display: flex;
+  justify-content: flex-start;
+  height:auto;
+  h2{
+    margin-top: 0;
+  }
+}
+
+.book-cover{
+  height: 10rem;
+}
+
 form{
   width: 50%;
   input, label, select, textarea{

@@ -6,4 +6,10 @@ header {
   height: 3rem;
   margin: 1rem 1rem; }
 
+form {
+  width: 50%; }
+  form input, form label, form select {
+    display: block;
+    width: 100%; }
+
 /*# sourceMappingURL=style.css.map */

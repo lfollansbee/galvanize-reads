@@ -5,11 +5,18 @@ var knex = require('../db/knex.js')
 var queries = require('../db/queries.js')
 
 router.get('/', function(req, res, next) {
-  queries.listBooks()
+  queries.listBooksWithGenres()
   .then(function(books){
+    console.log(books);
   res.render('list-books', {book: books});
   });
 });
 
+router.get('/new', function(req, res, next) {
+  queries.getGenres()
+  .then(function(genres){
+    res.render('add-book',{genre: genres});
+  })
+});
 
 module.exports = router;

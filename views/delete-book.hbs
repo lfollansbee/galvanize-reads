@@ -1,0 +1,16 @@
+<section class="book">
+  <article class="delete-book">
+      <img class="book-cover" src="{{book.cover_url}}">
+    <div class="book-info">
+      <h2>{{book.title}}</h2>
+      <h4>By (Author)</h4>
+      <p class="genre">{{book.name}}</p>
+      <p class="description">{{book.description}}</p>
+    </div>
+  </article>
+  <a href="/books/{{book.book_id}}/delete-book">
+    <button class="delete-btn">
+      Delete {{book.title}}?
+    </button>
+  </a>
+</section>

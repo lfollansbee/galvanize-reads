@@ -9,15 +9,25 @@ header {
 .book {
   width: 50%; }
 
-.book-list {
+.book-list, .delete-book {
   display: flex;
   justify-content: flex-start;
   height: auto; }
-  .book-list h2 {
+  .book-list h2, .book-list h4, .delete-book h2, .delete-book h4 {
     margin-top: 0; }
 
 .book-cover {
   height: 10rem; }
+
+.book-header {
+  display: flex;
+  justify-content: space-between; }
+
+.fa-remove {
+  color: red; }
+
+.delete-btn {
+  width: 100%; }
 
 form {
   width: 50%; }

@@ -1,0 +1,47 @@
+header{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo{
+  height:3rem;
+  margin: 1rem 1rem;
+}
+
+.book{
+  width:50%;
+}
+
+.book-list, .delete-book{
+  display: flex;
+  justify-content: flex-start;
+  height:auto;
+  h2, h4{
+    margin-top: 0;
+  }
+}
+
+.book-cover{
+  height: 10rem;
+}
+
+.book-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-remove{
+  color:red;
+}
+
+.delete-btn{
+  width:100%;
+}
+
+form{
+  width: 50%;
+  input, label, select, textarea{
+    display: block;
+    width: 100%;
+  }
+}

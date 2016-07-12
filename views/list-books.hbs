@@ -3,7 +3,12 @@
   <article class="book-list">
       <img class="book-cover" src="{{cover_url}}">
     <div class="book-info">
-      <h2>{{title}}</h2>
+      <div class="book-header">
+        <h2>{{title}}</h2>
+        <a href="/books/{{book_id}}/delete">
+          <i class="fa fa-remove"></i>
+        </a>
+      </div>
       <h4>By (Author)</h4>
       <p class="genre">{{name}}</p>
       <p class="description">{{description}}</p>

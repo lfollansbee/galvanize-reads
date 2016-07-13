@@ -87,6 +87,9 @@ a {
   .headings h2 {
     padding-top: .25vw; }
 
+.fa {
+  border: black 1px solid; }
+
 .fa-remove {
   color: red; }
 
@@ -100,6 +103,8 @@ button {
 
 form {
   width: 50%; }
+  form label {
+    margin-top: 1vw; }
   form input, form label, form select, form textarea {
     display: block;
     width: 100%; }

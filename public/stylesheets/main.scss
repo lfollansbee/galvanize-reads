@@ -103,6 +103,9 @@ a{
   }
 }
 
+.fa{
+  border: black 1px solid;
+}
 .fa-remove{
   color:red;
 }
@@ -118,6 +121,9 @@ button{
 
 form{
   width: 50%;
+  label{
+    margin-top: 1vw;
+  }
   input, label, select, textarea{
     display: block;
     width: 100%;

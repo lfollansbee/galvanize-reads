@@ -7,21 +7,21 @@ var queries = require('../db/queries.js')
 router.get('/', function(req, res) {
   queries.listBooksWithGenres()
   .then(function(books){
-  res.render('list-books', {book: books});
+  res.render('books/list-books', {book: books});
   });
 });
 
 router.get('/:id', function(req,res){
   queries.getBookById(req.params.id)
   .then(function(book){
-    res.render('read-book', {book:book[0]})
+    res.render('books/read-book', {book:book[0]})
   })
 })
 
 router.get('/new', function(req, res) {
   queries.getGenres()
   .then(function(genres){
-    res.render('add-book',{genre: genres});
+    res.render('books/add-book',{genre: genres});
   })
 });
 
@@ -35,7 +35,7 @@ router.post('/new', function(req, res){
 router.get('/:id/edit', function(req, res) {
   queries.getBookById(req.params.id)
   .then(function(book){
-    res.render('edit-book', {book:book[0]})
+    res.render('books/edit-book', {book:book[0]})
   })
 });
 
@@ -49,7 +49,7 @@ router.post('/:id/edit', function(req, res){
 router.get('/:id/delete', function(req,res){
   queries.getBookById(req.params.id)
   .then(function(book){
-    res.render('delete-book', {book:book[0]})
+    res.render('books/delete-book', {book:book[0]})
   })
 })
 

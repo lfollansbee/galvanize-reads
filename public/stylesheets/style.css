@@ -10,23 +10,23 @@ header {
 .fa-book {
   margin: 1rem 1rem; }
 
-.book {
+.book, .author {
   width: 50%; }
 
-.book-list, .delete-book, .read-book {
+.list, .delete-book, .delete-author, .read {
   display: flex;
   justify-content: flex-start;
   height: auto; }
-  .book-list h2, .book-list h4, .delete-book h2, .delete-book h4, .read-book h2, .read-book h4 {
+  .list h2, .list h4, .delete-book h2, .delete-book h4, .delete-author h2, .delete-author h4, .read h2, .read h4 {
     margin-top: 0; }
-  .book-list a, .delete-book a, .read-book a {
+  .list a, .delete-book a, .delete-author a, .read a {
     text-decoration: none;
     color: #236367; }
 
-.book-cover {
+.this-img {
   height: 10rem; }
 
-.book-header {
+.headings {
   display: flex;
   justify-content: space-between; }
 

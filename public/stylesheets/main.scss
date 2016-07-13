@@ -13,11 +13,11 @@ header{
   margin: 1rem 1rem;
 }
 
-.book{
+.book, .author{
   width:50%;
 }
 
-.book-list, .delete-book, .read-book{
+.list, .delete-book, .delete-author, .read{
   display: flex;
   justify-content: flex-start;
   height:auto;
@@ -30,11 +30,11 @@ header{
   }
 }
 
-.book-cover{
+.this-img{
   height: 10rem;
 }
 
-.book-header{
+.headings{
   display: flex;
   justify-content: space-between;
 }

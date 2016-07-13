@@ -1,12 +1,12 @@
-<section class="book read-book">
-  <img class="book-cover" src="{{book.cover_url}}">
-  <div class="book-info">
-    <div class="book-header">
+<section class="book read">
+  <img class="this-img" src="{{book.cover_url}}">
+  <div class="info">
+    <div class="headings">
       <h2>{{book.title}}</h2>
-      <a href="/books/{{book_id}}/edit">
+      <a href="/books/{{book.book_id}}/edit">
         <i class="fa fa-pencil"></i>
       </a>
-      <a href="/books/{{book_id}}/delete">
+      <a href="/books/{{book.book_id}}/delete">
         <i class="fa fa-remove"></i>
       </a>
     </div>

@@ -49,5 +49,9 @@ module.exports = {
           }
           return knex('book').where({id:bookId}).update(book)
         })//not working yet, adds new genre, but doesn't update book
+  },
+
+  listAuthors: function(){
+    return knex('author')
   }
 }

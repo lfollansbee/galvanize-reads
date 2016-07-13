@@ -61,5 +61,11 @@ module.exports = {
       bio: newAuthor.bio,
       portrait_url: newAuthor.portrait_url
     });
+  },
+  getAuthorById: function(authorId){
+    return knex('author').select().where({id:authorId})
+  },
+  deleteAuthor: function(authorId){
+    return knex('author').where({id: authorId}).del()
   }
 }

@@ -48,13 +48,13 @@ a {
 .book, .author {
   width: 50%; }
 
-.list, .delete-book, .delete-author, .read {
+.list, .delete, .read {
   display: flex;
   justify-content: flex-start;
   height: auto; }
-  .list h2, .list h4, .delete-book h2, .delete-book h4, .delete-author h2, .delete-author h4, .read h2, .read h4 {
+  .list h2, .list h4, .delete h2, .delete h4, .read h2, .read h4 {
     margin-top: 0; }
-  .list a, .delete-book a, .delete-author a, .read a {
+  .list a, .delete a, .read a {
     text-decoration: none;
     color: #236367; }
 

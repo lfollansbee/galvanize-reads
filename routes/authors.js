@@ -22,4 +22,20 @@ router.post('/new', function(req, res){
   })
 })
 
+router.get('/:id/delete', function(req,res){
+  queries.getAuthorById(req.params.id)
+  .then(function(author){
+    res.render('authors/delete-author', {
+      author:author[0]
+    })
+  })
+})
+
+router.get('/:id/delete-author', function(req,res){
+  queries.deleteAuthor(req.params.id)
+  .then(function(){
+    res.redirect('/authors')
+  })
+})
+
 module.exports = router;

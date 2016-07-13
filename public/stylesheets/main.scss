@@ -58,7 +58,7 @@ a{
   width:50%;
 }
 
-.list, .delete-book, .delete-author, .read{
+.list, .delete, .read{
   @include flex-justify(flex-start);
   height:auto;
   h2, h4{
@@ -89,9 +89,6 @@ a{
   padding: 1rem 0;
   background-color: $teal;
   color:white;
-  &:hover{
-
-  }
 }
 
 form{

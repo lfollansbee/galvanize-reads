@@ -11,13 +11,6 @@ router.get('/', function(req, res) {
   });
 });
 
-router.get('/:id', function(req,res){
-  queries.getBookById(req.params.id)
-  .then(function(book){
-    res.render('books/read-book', {book:book[0]})
-  })
-})
-
 router.get('/new', function(req, res) {
   queries.getGenres()
   .then(function(genres){
@@ -29,6 +22,13 @@ router.post('/new', function(req, res){
   queries.addBook(req.body)
   .then(function(){
     res.redirect('/books');
+  })
+})
+
+router.get('/:id', function(req,res){
+  queries.getBookById(req.params.id)
+  .then(function(book){
+    res.render('books/read-book', {book:book[0]})
   })
 })
 

@@ -19,12 +19,16 @@
 
 <main class="book">
   <section class="delete">
-    <a href="/books/{{book.book_id}}">
+    <a href="/books/{{book.id}}">
       <img class="this-img" src="{{book.cover_url}}">
     </a>
     <div class="info">
       <h2>{{book.title}}</h2>
-      <h4>By (Author)</h4>
+      <h4>By:<br>
+        {{#each this.authors}}
+          <a href="/authors/{{author_id}}">{{first_name}} {{last_name}}</a><br>
+        {{/each}}
+      </h4>
       <p class="genre">{{book.name}}</p>
       <p class="description">{{book.description}}</p>
     </div>

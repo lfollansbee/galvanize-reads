@@ -58,11 +58,14 @@ router.post('/:id/edit', function(req, res){
 
 //DELETE
 router.get('/:id/delete', function(req,res){
-  queries.Books.getBookById(req.params.id)
-  .then(function(book){
-    res.render('books/delete-book', {book:book[0]})
-  })
-})
+  Promise.all([
+    queries.Books.getBookById(req.params.id),
+    queries.Books.getAuthorsByBookId(req.params.id)
+  ]).
+  then(function(data) {
+    res.render('books/delete-book', {book: data[0], authors: data[1]});
+  });
+});
 
 router.get('/:id/delete-book', function(req,res){
   queries.Books.deleteBook(req.params.id)

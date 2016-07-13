@@ -22,12 +22,14 @@ router.post('/new', function(req, res){
   })
 })
 
-// router.get('/:id', function(req,res){
-//   queries.getBookById(req.params.id)
-//   .then(function(book){
-//     res.render('books/read-book', {book:book[0]})
-//   })
-// })
+router.get('/:id', function(req,res){
+  queries.getAuthorById(req.params.id)
+  .then(function(author){
+    res.render('authors/read-author', {
+      author:author[0]
+    })
+  })
+})
 
 router.get('/:id/edit', function(req, res) {
   queries.getAuthorById(req.params.id)

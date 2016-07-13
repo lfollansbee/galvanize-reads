@@ -27,14 +27,15 @@ router.post('/new', function(req, res){
 })
 
 //READ
-router.get('/:id', function(req,res){
-  queries.Authors.getAuthorById(req.params.id)
-  .then(function(author){
-    res.render('authors/read-author', {
-      author:author[0]
-    })
-  })
-})
+router.get('/:id', function(req, res, next) {
+  Promise.all([
+    queries.Authors.getAuthorById(req.params.id),
+    queries.Authors.getBooksByAuthorId(req.params.id)
+  ]).
+  then(function(data) {
+    res.render('authors/read-author', {author: data[0], books: data[1]});
+  });
+});
 
 //UPDATE
 router.get('/:id/edit', function(req, res) {

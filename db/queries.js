@@ -13,19 +13,18 @@ module.exports = {
         .innerJoin('author_book', 'author.id', 'author_book.author_id')
         .where({'author_book.book_id': bookId});
     },
-  listBooksWithAuthors: function() {
-		return this.listBooks()
-		.then((returnedBooks) => {
-			return returnedBooks.map((book) => {
-				return this.getAuthorsByBookId(book.id)
-					.then(function(authors) {
-            book.authors = authors;
-            return book;
-					});
-			});
-		});
-  },
-
+    listBooksWithAuthors: function() {
+  		return this.listBooks()
+  		.then((returnedBooks) => {
+  			return returnedBooks.map((book) => {
+  				return this.getAuthorsByBookId(book.id)
+  					.then(function(authors) {
+              book.authors = authors;
+              return book;
+  					});
+  			});
+  		});
+    },
     getGenres: function(){
       return knex('genre').select()
     },
@@ -38,13 +37,16 @@ module.exports = {
       });
     },
     getBookById: function(bookId){
-      return knex('book').select('book.id', 'book.*', 'genre.name').join('genre', 'genre.id', 'genre_id').where({'book.id':bookId}).first()
+      return knex('book').select('book.id', 'book.*', 'genre.name')
+      .join('genre', 'genre.id', 'genre_id')
+      .where({'book.id':bookId}).first()
     },
     deleteBook: function(bookId){
       return knex('book').where({id: bookId}).del()
     },
     editBook: function(bookUpdate, bookId){
-      return knex('book').where({id:bookId}).update({
+      return knex('book').where({id:bookId})
+      .update({
         title: bookUpdate.title,
         description: bookUpdate.description,
         cover_url: bookUpdate.cover_url
@@ -84,7 +86,6 @@ module.exports = {
         .innerJoin('author_book', 'book.id', 'author_book.book_id')
         .where({'author_book.author_id': authorId});
     },
-
     listAuthorsWithBooks: function() {
     	return this.listAuthors()
   			.then((returnedAuthors) => {
@@ -107,13 +108,16 @@ module.exports = {
       });
     },
     getAuthorById: function(authorId){
-      return knex('author').select().where({id:authorId})
+      return knex('author').select()
+      .where({id:authorId}).first()
     },
     deleteAuthor: function(authorId){
-      return knex('author').where({id: authorId}).del()
+      return knex('author')
+      .where({id: authorId}).del()
     },
     editAuthor: function(authorUpdate, authorId){
-      return knex('author').where({id:authorId}).update({
+      return knex('author').where({id:authorId})
+      .update({
         first_name: authorUpdate.first_name,
         last_name: authorUpdate.last_name,
         portrait_url: authorUpdate.portrait_url,

@@ -53,5 +53,13 @@ module.exports = {
 
   listAuthors: function(){
     return knex('author')
+  },
+  addAuthor: function(newAuthor){
+    return knex('author').insert({
+      first_name: newAuthor.first_name,
+      last_name: newAuthor.last_name,
+      bio: newAuthor.bio,
+      portrait_url: newAuthor.portrait_url
+    });
   }
 }

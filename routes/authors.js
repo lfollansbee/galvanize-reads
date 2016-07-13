@@ -11,4 +11,15 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/new', function(req, res) {
+    res.render('authors/add-author');
+});
+
+router.post('/new', function(req, res){
+  queries.addAuthor(req.body)
+  .then(function(){
+    res.redirect('/authors');
+  })
+})
+
 module.exports = router;

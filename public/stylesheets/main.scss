@@ -61,6 +61,8 @@ a{
 .list, .delete, .read{
   @include flex-justify(flex-start);
   height:auto;
+  margin-top:1vw;
+  border: 1px dashed $teal;
   h2, h4{
     margin-top: 0;
   }
@@ -71,22 +73,27 @@ a{
 }
 
 .this-img{
-  height: 10rem;
-  width: auto;
+  width: 10vw;
+  height:auto;
+  margin-right: 1vw;
 }
 
 .headings{
   display: flex;
   justify-content: space-between;
+  h2{
+    padding-top:.25vw;
+  }
 }
 
 .fa-remove{
   color:red;
 }
 
-.delete-btn{
+button{
   width:100%;
   font-size: 1.5rem;
+  margin-top:1vw;
   padding: 1rem 0;
   background-color: $teal;
   color:white;

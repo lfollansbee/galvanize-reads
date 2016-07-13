@@ -19,14 +19,14 @@
 
 <main class="book">
   {{#each book}}
-  <article class="list">
+  <section class="list">
     <a href="/books/{{book_id}}">
       <img class="this-img" src="{{cover_url}}">
     </a>
     <div class="info">
       <div class="headings">
         <a href="/books/{{book_id}}">
-          <h2>{{title}}</h2>
+          <h2>{{book_id}} {{title}}</h2>
         </a>
         <a href="/books/{{book_id}}/edit">
           <i class="fa fa-pencil"></i>
@@ -35,11 +35,15 @@
           <i class="fa fa-remove"></i>
         </a>
       </div>
-      <h4>By (Author)</h4>
+      <h4>By:
+        {{#each this.authors}}
+          <a href="/authors/{{author_id}}">{{first_name}} {{last_name}}</a><br> 
+        {{/each}}
+      </h4>
       <p class="genre">{{name}}</p>
       <p class="description">{{description}}</p>
     </div>
-  </article>
+  </section>
   {{/each}}
   <a href="/books/new"><button>Add a Book</button></a>
 </main>

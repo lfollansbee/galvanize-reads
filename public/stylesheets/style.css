@@ -55,7 +55,9 @@ a {
 .list, .delete, .read {
   display: flex;
   justify-content: flex-start;
-  height: auto; }
+  height: auto;
+  margin-top: 1vw;
+  border: 1px dashed #236367; }
   .list h2, .list h4, .delete h2, .delete h4, .read h2, .read h4 {
     margin-top: 0; }
   .list a, .delete a, .read a {
@@ -63,19 +65,23 @@ a {
     color: #236367; }
 
 .this-img {
-  height: 10rem;
-  width: auto; }
+  width: 10vw;
+  height: auto;
+  margin-right: 1vw; }
 
 .headings {
   display: flex;
   justify-content: space-between; }
+  .headings h2 {
+    padding-top: .25vw; }
 
 .fa-remove {
   color: red; }
 
-.delete-btn {
+button {
   width: 100%;
   font-size: 1.5rem;
+  margin-top: 1vw;
   padding: 1rem 0;
   background-color: #236367;
   color: white; }

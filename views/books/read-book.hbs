@@ -18,7 +18,9 @@
 </nav>
 
 <main class="book read">
-  <img class="this-img" src="{{book.cover_url}}">
+  <a href="/books/{{book.book_id}}">
+    <img class="this-img" src="{{book.cover_url}}">
+  </a>
   <div class="info">
     <div class="headings">
       <h2>{{book.title}}</h2>

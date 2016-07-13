@@ -3,7 +3,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       return Promise.all([
         knex('genre').insert({name: 'Python'}),
-        knex('genre').insert({name: 'Javascript'})
+        knex('genre').insert({name: 'JavaScript'})
       ]);
     });
 };

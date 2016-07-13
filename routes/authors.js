@@ -5,12 +5,16 @@ var knex = require('../db/knex.js')
 var queries = require('../db/queries.js')
 
 router.get('/', function(req, res) {
-  queries.Authors.listAuthors()
-  .then(function(authors){
-    res.render('authors/list-authors', {author: authors});
-  });
+  queries.Authors.listAuthorsWithBooks()
+    .then(function (data) {
+      return Promise.all(data);
+    })
+    .then(function(authors) {
+      res.render('authors/list-authors', {author: authors});
+    });
 });
 
+//CREATE
 router.get('/new', function(req, res) {
     res.render('authors/add-author');
 });
@@ -22,6 +26,7 @@ router.post('/new', function(req, res){
   })
 })
 
+//READ
 router.get('/:id', function(req,res){
   queries.Authors.getAuthorById(req.params.id)
   .then(function(author){
@@ -31,6 +36,7 @@ router.get('/:id', function(req,res){
   })
 })
 
+//UPDATE
 router.get('/:id/edit', function(req, res) {
   queries.Authors.getAuthorById(req.params.id)
   .then(function(author){
@@ -45,6 +51,7 @@ router.post('/:id/edit', function(req, res){
   })
 })
 
+//DELETE
 router.get('/:id/delete', function(req,res){
   queries.Authors.getAuthorById(req.params.id)
   .then(function(author){

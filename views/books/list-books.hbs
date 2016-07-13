@@ -20,24 +20,24 @@
 <main class="book">
   {{#each book}}
   <section class="list">
-    <a href="/books/{{book_id}}">
+    <a href="/books/{{id}}">
       <img class="this-img" src="{{cover_url}}">
     </a>
     <div class="info">
       <div class="headings">
-        <a href="/books/{{book_id}}">
-          <h2>{{book_id}} {{title}}</h2>
+        <a href="/books/{{id}}">
+          <h2>{{title}}</h2>
         </a>
-        <a href="/books/{{book_id}}/edit">
+        <a href="/books/{{id}}/edit">
           <i class="fa fa-pencil"></i>
         </a>
-        <a href="/books/{{book_id}}/delete">
+        <a href="/books/{{id}}/delete">
           <i class="fa fa-remove"></i>
         </a>
       </div>
       <h4>By:
         {{#each this.authors}}
-          <a href="/authors/{{author_id}}">{{first_name}} {{last_name}}</a><br> 
+          <a href="/authors/{{author_id}}">{{first_name}} {{last_name}}</a><br>
         {{/each}}
       </h4>
       <p class="genre">{{name}}</p>

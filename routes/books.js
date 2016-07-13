@@ -14,6 +14,7 @@ router.get('/', function(req, res) {
     });
 });
 
+//CREATE
 router.get('/new', function(req, res) {
   queries.Books.getGenres()
   .then(function(genres){
@@ -28,13 +29,19 @@ router.post('/new', function(req, res){
   })
 })
 
-router.get('/:id', function(req,res){
-  queries.Books.getBookById(req.params.id)
-  .then(function(book){
-    res.render('books/read-book', {book:book[0]})
-  })
-})
+//READ
+router.get('/:id', function(req, res, next) {
+  Promise.all([
+    queries.Books.getBookById(req.params.id),
+    queries.Books.getAuthorsByBookId(req.params.id)
+  ]).
+  then(function(data) {
+    // console.log('BOOK DATA:', data[0], 'AUTHOR DATA:',data[1]);
+    res.render('books/read-book', {book: data[0], authors: data[1]});
+  });
+});
 
+//UPDATE
 router.get('/:id/edit', function(req, res) {
   queries.Books.getBookById(req.params.id)
   .then(function(book){
@@ -49,6 +56,7 @@ router.post('/:id/edit', function(req, res){
   })
 })
 
+//DELETE
 router.get('/:id/delete', function(req,res){
   queries.Books.getBookById(req.params.id)
   .then(function(book){

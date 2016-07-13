@@ -40,7 +40,7 @@ module.exports = {
       });
     },
     getBookById: function(bookId){
-      return knex('book').select('book.id as book_id', 'book.*', 'genre.*').join('genre', 'genre.id', 'genre_id').where({'book.id':bookId})
+      return knex('book').select('book.id', 'book.*', 'genre.name').join('genre', 'genre.id', 'genre_id').where({'book.id':bookId}).first()
     },
     deleteBook: function(bookId){
       return knex('book').where({id: bookId}).del()

@@ -16,22 +16,32 @@ header {
 .fa-book {
   margin: 1rem 1rem; }
 
-nav {
-  width: 50%;
+main {
   display: flex;
   justify-content: flex-start; }
+
+nav {
+  margin: 1vw;
+  display: flex;
+  flex-direction: column; }
   nav figure {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     border: solid 1px #236367;
     padding: .5vw;
-    margin: .5vw; }
+    margin: 1vw 0; }
     nav figure a {
       text-decoration: none;
       color: #236367; }
     nav figure img {
       height: 5vw; }
+
+.vertical {
+  -webkit-transform: rotateZ(270deg);
+  /* Safari */
+  transform: rotateZ(270deg);
+  /* Standard syntax */ }
 
 .index {
   width: 100%;
@@ -50,16 +60,18 @@ a {
   text-decoration: none; }
 
 .book, .author {
+  margin: 1vw;
   width: 50%; }
 
 .list, .delete, .read {
   display: flex;
   justify-content: flex-start;
   height: auto;
-  margin-top: 1vw;
-  border: 1px dashed #236367; }
-  .list h2, .list h4, .delete h2, .delete h4, .read h2, .read h4 {
+  margin-bottom: 1vw; }
+  .list h2, .delete h2, .read h2 {
     margin-top: 0; }
+  .list h4, .delete h4, .read h4 {
+    margin: 0; }
   .list a, .delete a, .read a {
     text-decoration: none;
     color: #236367; }
@@ -81,7 +93,7 @@ a {
 button {
   width: 100%;
   font-size: 1.5rem;
-  margin-top: 1vw;
+  margin: 1vw 0;
   padding: 1rem 0;
   background-color: #236367;
   color: white; }

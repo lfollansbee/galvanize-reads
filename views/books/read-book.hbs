@@ -1,15 +1,15 @@
 <nav>
   <a href="/books">
-    <figure>
-      <img src="http://www.uglydogbooks.com/wp-content/uploads/2014/04/books.jpg">
+    <figure class="vertical">
+      <i class="fa fa-bookmark fa-3x"></i>
       <figcaption>
         <h1>Books</h1>
       </figcaption>
     </figure>
   </a>
   <a href="/authors">
-    <figure>
-      <img src="http://az616578.vo.msecnd.net/files/2016/03/12/635934148383695904190770395_writrrr.jpg">
+    <figure class="vertical">
+      <i class="fa fa-user fa-3x"></i>
       <figcaption>
         <h1>Authors</h1>
       </figcaption>
@@ -17,7 +17,7 @@
   </a>
 </nav>
 
-<main class="book read">
+<section class="book read">
   <a href="/books/{{book.id}}">
     <img class="this-img" src="{{book.cover_url}}">
   </a>
@@ -31,7 +31,7 @@
         <i class="fa fa-remove"></i>
       </a>
     </div>
-    <h4>By:<br>
+    <h4>
       {{#each this.authors}}
         <a href="/authors/{{author_id}}">{{first_name}} {{last_name}}</a><br>
       {{/each}}
@@ -39,4 +39,4 @@
     <p class="genre">{{book.name}}</p>
     <p class="description">{{book.description}}</p>
   </div>
-</main>
+</section>

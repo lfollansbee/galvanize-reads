@@ -1,15 +1,15 @@
 <nav>
   <a href="/books">
-    <figure>
-      <img src="http://www.uglydogbooks.com/wp-content/uploads/2014/04/books.jpg">
+    <figure class="vertical">
+      <i class="fa fa-bookmark fa-3x"></i>
       <figcaption>
         <h1>Books</h1>
       </figcaption>
     </figure>
   </a>
   <a href="/authors">
-    <figure>
-      <img src="http://az616578.vo.msecnd.net/files/2016/03/12/635934148383695904190770395_writrrr.jpg">
+    <figure class="vertical">
+      <i class="fa fa-user fa-3x"></i>
       <figcaption>
         <h1>Authors</h1>
       </figcaption>
@@ -17,7 +17,7 @@
   </a>
 </nav>
 
-<main class="book">
+<section class="book">
   <h3>Edit This Book</h3>
   <form action="/books/{{book.book_id}}/edit" method="post" class="edit-book">
     <label for="title">Title</label>
@@ -34,4 +34,4 @@
 
     <button type="submit">Update</button>
   </form>
-</main>
+</section>

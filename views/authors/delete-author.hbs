@@ -19,10 +19,19 @@
 
 <main class="author">
   <section class="delete">
+    <a href="/authors/{{author.id}}">
       <img class="this-img" src="{{author.portrait_url}}">
+    </a>
     <div class="info">
       <h2>{{author.first_name}} {{author.last_name}}</h2>
       <p>{{author.bio}}</p>
+      <h4>Books</h4>
+      <ul class="author-books">
+        {{#each this.books}}
+          <a href="/books/{{book_id}}"><li>{{title}}</li>
+          </a>
+        {{/each}}
+      </ul>
     </div>
   </section>
   <a href="/authors/{{author.id}}/delete-author">

@@ -1,0 +1,37 @@
+<nav>
+  <a href="/books">
+    <figure>
+      <img src="http://www.uglydogbooks.com/wp-content/uploads/2014/04/books.jpg">
+      <figcaption>
+        <h1>Books</h1>
+      </figcaption>
+    </figure>
+  </a>
+  <a href="/authors">
+    <figure>
+      <img src="http://az616578.vo.msecnd.net/files/2016/03/12/635934148383695904190770395_writrrr.jpg">
+      <figcaption>
+        <h1>Authors</h1>
+      </figcaption>
+    </figure>
+  </a>
+</nav>
+
+<main class="author">
+  <h3>Edit This Author's Information<h3>
+  <form action="/authors/{{author.id}}/edit" method="post" class="edit-author">
+    <label for="first_name">First Name</label>
+      <input type="text" id="first_name" name="first_name" value="{{author.first_name}}">
+
+    <label for="last_name">Last Name</label>
+      <input type="text" id="last_name" name="last_name" value="{{author.last_name}}">
+
+    <label for="portrait_url">Portrait Image URL</label>
+    <input type="url" id="portrait_url" name="portrait_url" value="{{author.portrait_url}}">
+
+    <label for="bio">Biography</label>
+      <textarea rows="5" id="bio" name="bio" value="{{author.bio}}">{{author.bio}}</textarea>
+
+    <button type="submit">Update {{author.first_name}} {{author.last_name}}</button>
+  </form>
+</main>

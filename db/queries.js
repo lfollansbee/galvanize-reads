@@ -67,5 +67,13 @@ module.exports = {
   },
   deleteAuthor: function(authorId){
     return knex('author').where({id: authorId}).del()
+  },
+  editAuthor: function(authorUpdate, authorId){
+    return knex('author').where({id:authorId}).update({
+      first_name: authorUpdate.first_name,
+      last_name: authorUpdate.last_name,
+      portrait_url: authorUpdate.portrait_url,
+      bio: authorUpdate.bio
+    });
   }
 }

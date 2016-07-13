@@ -5,7 +5,7 @@
       <input type="text" id="title" name="title" value="{{book.title}}">
 
     <label for="genre">Genre</label>
-      <input type="text" id="genre" name="genre" value="{{book.name}}">
+      <input type="text" id="genre" name="genre" value="{{book.name}}" disabled>
 
     <label for="description">Description</label>
       <textarea rows="5" id="description" name="description" value="{{book.description}}">{{book.description}}</textarea>
@@ -13,6 +13,6 @@
     <label for="cover_url">Cover Image URL</label>
       <input type="url" id="cover_url" name="cover_url" value="{{book.cover_url}}">
 
-    <button type="submit">Edit</button>
+    <button type="submit">Update</button>
   </form>
 </section>

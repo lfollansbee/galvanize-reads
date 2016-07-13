@@ -1,14 +1,49 @@
+html {
+  box-sizing: border-box; }
+
 header {
   display: flex;
   justify-content: flex-start;
   background-color: #162855;
   color: white; }
   header a {
-    text-decoration: none;
     color: white; }
 
 .fa-book {
   margin: 1rem 1rem; }
+
+nav {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start; }
+  nav figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #236367;
+    padding: .5vw;
+    margin: .5vw; }
+    nav figure a {
+      text-decoration: none;
+      color: #236367; }
+    nav figure img {
+      height: 5vw; }
+
+.index {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  .index figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .index figure a {
+      color: #236367; }
+    .index figure img {
+      height: 25vw; }
+
+a {
+  text-decoration: none; }
 
 .book, .author {
   width: 50%; }
@@ -24,7 +59,8 @@ header {
     color: #236367; }
 
 .this-img {
-  height: 10rem; }
+  height: 10rem;
+  width: auto; }
 
 .headings {
   display: flex;

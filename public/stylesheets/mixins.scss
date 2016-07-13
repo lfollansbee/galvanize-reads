@@ -1,0 +1,6 @@
+@mixin flex-justify($spacing) {
+  display:flex;
+  justify-content: $spacing;
+}
+
+// example:  .box { @include flex-justify(center); }

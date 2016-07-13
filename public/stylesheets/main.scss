@@ -1,10 +1,12 @@
+html{
+  box-sizing: border-box;
+}
+
 header{
-  display: flex;
-  justify-content: flex-start;
+  @include flex-justify(flex-start);
   background-color: $navy;
   color:white;
   a{
-    text-decoration: none;
     color:white;
   }
 }
@@ -13,13 +15,51 @@ header{
   margin: 1rem 1rem;
 }
 
+nav{
+  width: 50%;
+  @include flex-justify(flex-start);
+  figure{
+    @include flex-justify(center);
+    align-items: center;
+    border: solid 1px $teal;
+    padding:.5vw;
+    margin:.5vw;
+    a{
+      text-decoration: none;
+      color: $teal;
+    }
+    img{
+      height:5vw;
+    }
+  }
+}
+
+.index{
+  width:100%;
+  @include flex-justify(center);
+  figure{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    a{
+      color:$teal;
+    }
+    img{
+      height: 25vw;
+    }
+  }
+}
+
+a{
+  text-decoration: none;
+}
+
 .book, .author{
   width:50%;
 }
 
 .list, .delete-book, .delete-author, .read{
-  display: flex;
-  justify-content: flex-start;
+  @include flex-justify(flex-start);
   height:auto;
   h2, h4{
     margin-top: 0;
@@ -32,11 +72,11 @@ header{
 
 .this-img{
   height: 10rem;
+  width: auto;
 }
 
 .headings{
-  display: flex;
-  justify-content: space-between;
+  @include flex-justify(space-between);
 }
 
 .fa-remove{

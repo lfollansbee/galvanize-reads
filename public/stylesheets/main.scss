@@ -17,12 +17,16 @@ header{
   width:50%;
 }
 
-.book-list, .delete-book{
+.book-list, .delete-book, .read-book{
   display: flex;
   justify-content: flex-start;
   height:auto;
   h2, h4{
     margin-top: 0;
+  }
+  a{
+    text-decoration: none;
+    color:$teal;
   }
 }
 

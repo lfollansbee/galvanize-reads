@@ -1,0 +1,17 @@
+<section class="book read-book">
+  <img class="book-cover" src="{{book.cover_url}}">
+  <div class="book-info">
+    <div class="book-header">
+      <h2>{{book.title}}</h2>
+      <a href="/books/{{book_id}}/edit">
+        <i class="fa fa-pencil"></i>
+      </a>
+      <a href="/books/{{book_id}}/delete">
+        <i class="fa fa-remove"></i>
+      </a>
+    </div>
+    <h4>By (Author)</h4>
+    <p class="genre">{{book.name}}</p>
+    <p class="description">{{book.description}}</p>
+  </div>
+</section>

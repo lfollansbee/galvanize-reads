@@ -1,10 +1,14 @@
 <section class="book">
   {{#each book}}
   <article class="book-list">
+    <a href="/books/{{book_id}}">
       <img class="book-cover" src="{{cover_url}}">
+    </a>
     <div class="book-info">
       <div class="book-header">
-        <h2>{{title}}</h2>
+        <a href="/books/{{book_id}}">
+          <h2>{{title}}</h2>
+        </a>
         <a href="/books/{{book_id}}/edit">
           <i class="fa fa-pencil"></i>
         </a>

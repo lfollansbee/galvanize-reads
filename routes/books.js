@@ -11,6 +11,13 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/:id', function(req,res){
+  queries.getBookById(req.params.id)
+  .then(function(book){
+    res.render('read-book', {book:book[0]})
+  })
+})
+
 router.get('/new', function(req, res) {
   queries.getGenres()
   .then(function(genres){

@@ -13,12 +13,15 @@ header {
 .book {
   width: 50%; }
 
-.book-list, .delete-book {
+.book-list, .delete-book, .read-book {
   display: flex;
   justify-content: flex-start;
   height: auto; }
-  .book-list h2, .book-list h4, .delete-book h2, .delete-book h4 {
+  .book-list h2, .book-list h4, .delete-book h2, .delete-book h4, .read-book h2, .read-book h4 {
     margin-top: 0; }
+  .book-list a, .delete-book a, .read-book a {
+    text-decoration: none;
+    color: #236367; }
 
 .book-cover {
   height: 10rem; }

@@ -1,3 +1,8 @@
+@import 'https://fonts.googleapis.com/css?family=Cutive';
+@import 'https://fonts.googleapis.com/css?family=Cutive+Mono';
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cutive', serif; }
+
 html {
   box-sizing: border-box; }
 
@@ -81,5 +86,8 @@ form {
   form input, form label, form select, form textarea {
     display: block;
     width: 100%; }
+  form input, form textarea {
+    font-size: 1rem;
+    font-weight: normal; }
 
 /*# sourceMappingURL=style.css.map */

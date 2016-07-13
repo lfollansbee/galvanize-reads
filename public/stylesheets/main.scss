@@ -76,7 +76,8 @@ a{
 }
 
 .headings{
-  @include flex-justify(space-between);
+  display: flex;
+  justify-content: space-between;
 }
 
 .fa-remove{
@@ -96,5 +97,9 @@ form{
   input, label, select, textarea{
     display: block;
     width: 100%;
+  }
+  input, textarea{
+    font-size: 1rem;
+    font-weight: normal;
   }
 }

@@ -41,19 +41,12 @@ router.get('/:id', function(req, res, next) {
 });
 
 //UPDATE
-// router.get('/:id/edit', function(req, res) {
-//   queries.Books.getBookById(req.params.id)
-//   .then(function(book){
-//     res.render('books/edit-book', {book:book})
-//   })
-// });
 router.get('/:id/edit', function(req,res){
   Promise.all([
     queries.Books.getBookById(req.params.id),
     queries.Books.getAuthorsByBookId(req.params.id)
   ]).
   then(function(data) {
-    console.log(data);
     res.render('books/edit-book', {book: data[0], authors: data[1]});
   });
 });

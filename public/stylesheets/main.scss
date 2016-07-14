@@ -69,7 +69,6 @@ a{
 .book, .author{
   margin: 1vw;
   width:60%;
-
   .list, .delete, .read{
     @include flex-justify(flex-start);
     height:auto;
@@ -81,6 +80,11 @@ a{
     }
     .info{
       width:100%;
+    }
+    ul{
+        margin-top:0;
+        padding-left: 0;
+        list-style: none;
     }
     h2{
       margin-top: 0;
@@ -99,11 +103,8 @@ a{
         padding-top:.25vw;
       }
     }
-  }
-}
 
-.authors-book{
-  margin-top:0;
+  }
 }
 
 .fa-remove{

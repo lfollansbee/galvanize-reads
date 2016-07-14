@@ -40,9 +40,9 @@ module.exports = {
       return knex('book').where({id:bookId})
       .update({
         title: bookUpdate.title,
-        genre_id:bookUpdate.genre_id,
         description: bookUpdate.description,
-        cover_url: bookUpdate.cover_url
+        cover_url: bookUpdate.cover_url,
+        genre_id:bookUpdate.genre_id
       });
     },
     addAuthorToBook:function(bookId, authorId){

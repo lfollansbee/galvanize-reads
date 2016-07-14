@@ -39,10 +39,12 @@
       </div>
       <p class="bio">{{bio}}</p>
       <h4>Books</h4>
+      <ul>
         {{#each this.books}}
-          <a href="/books/{{book_id}}"><p class="authors-book">{{title}}</p>
-          </a>
+          <li class="authors-book"><a href="/books/{{book_id}}">{{title}}
+          </a></li>
         {{/each}}
+      </ul>
     </div>
   </section>
   {{/each}}

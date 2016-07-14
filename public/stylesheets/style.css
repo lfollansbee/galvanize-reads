@@ -73,6 +73,10 @@ a {
       margin-right: 1vw; }
     .book .list .info, .book .delete .info, .book .read .info, .author .list .info, .author .delete .info, .author .read .info {
       width: 100%; }
+    .book .list ul, .book .delete ul, .book .read ul, .author .list ul, .author .delete ul, .author .read ul {
+      margin-top: 0;
+      padding-left: 0;
+      list-style: none; }
     .book .list h2, .book .delete h2, .book .read h2, .author .list h2, .author .delete h2, .author .read h2 {
       margin-top: 0; }
     .book .list h4, .book .delete h4, .book .read h4, .author .list h4, .author .delete h4, .author .read h4 {
@@ -85,9 +89,6 @@ a {
       justify-content: space-between; }
       .book .list .headings h2, .book .delete .headings h2, .book .read .headings h2, .author .list .headings h2, .author .delete .headings h2, .author .read .headings h2 {
         padding-top: .25vw; }
-
-.authors-book {
-  margin-top: 0; }
 
 .fa-remove {
   color: red; }

@@ -45,11 +45,10 @@ router.get('/:id/edit', function(req,res){
   Promise.all([
     queries.Books.getBookById(req.params.id),
     queries.Books.getAuthorsByBookId(req.params.id),
-    queries.Books.getGenres(),
-    queries.Authors.listAuthors()
+    queries.Books.getGenres()
   ]).
   then(function(data) {
-    res.render('books/edit-book', {book: data[0], authors: data[1], genres:data[2], allAuthors:data[3]});
+    res.render('books/edit-book', {book: data[0], authors: data[1], genres:data[2]});
   });
 })
 
@@ -64,7 +63,6 @@ router.get('/:id/edit', function(req,res){
 //     res.redirect('/books/edit-book')
 //   })
 // })
-
 
 router.post('/:id/edit', function(req, res){
   queries.Books.editBook(req.body, req.params.id)

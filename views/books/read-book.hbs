@@ -17,26 +17,30 @@
   </a>
 </nav>
 
-<section class="book read">
-  <a href="/books/{{book.id}}">
-    <img class="this-img" src="{{book.cover_url}}">
-  </a>
-  <div class="info">
-    <div class="headings">
-      <h2>{{this.book.title}}</h2>
-      <a href="/books/{{book.id}}/edit">
-        <i class="fa fa-pencil"></i>
-      </a>
-      <a href="/books/{{book.id}}/delete">
-        <i class="fa fa-remove"></i>
-      </a>
+<section class="book">
+  <article class="read">
+    <a href="/books/{{book.id}}">
+      <img class="this-img" src="{{book.cover_url}}">
+    </a>
+    <div class="info">
+      <div class="headings">
+        <h2>{{this.book.title}}</h2>
+        <div class="icons">
+          <a href="/books/{{book.id}}/edit">
+            <i class="fa fa-pencil"></i>
+          </a>
+          <a href="/books/{{book.id}}/delete">
+            <i class="fa fa-remove"></i>
+          </a>
+        </div>
+      </div>
+      <h4>
+        {{#each this.authors}}
+          <a href="/authors/{{author_id}}">{{first_name}} {{last_name}}</a><br>
+        {{/each}}
+      </h4>
+      <p class="genre">{{book.name}}</p>
+      <p class="description">{{book.description}}</p>
     </div>
-    <h4>
-      {{#each this.authors}}
-        <a href="/authors/{{author_id}}">{{first_name}} {{last_name}}</a><br>
-      {{/each}}
-    </h4>
-    <p class="genre">{{book.name}}</p>
-    <p class="description">{{book.description}}</p>
-  </div>
+  </article>
 </section>

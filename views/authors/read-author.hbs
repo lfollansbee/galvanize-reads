@@ -25,12 +25,14 @@
     <div class="info">
       <div class="headings">
         <h2>{{author.first_name}} {{author.last_name}}</h2>
-        <a href="/authors/{{author.id}}/edit">
-          <i class="fa fa-pencil"></i>
-        </a>
-        <a href="/authors/{{author.id}}/delete">
-          <i class="fa fa-remove"></i>
-        </a>
+        <div class="icons">
+          <a href="/authors/{{author.id}}/edit">
+            <i class="fa fa-pencil"></i>
+          </a>
+          <a href="/authors/{{author.id}}/delete">
+            <i class="fa fa-remove"></i>
+          </a>
+        </div>
       </div>
       <p class="bio">{{author.bio}}</p>
       <h4>Books</h4>

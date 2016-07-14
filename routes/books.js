@@ -44,12 +44,27 @@ router.get('/:id', function(req, res, next) {
 router.get('/:id/edit', function(req,res){
   Promise.all([
     queries.Books.getBookById(req.params.id),
-    queries.Books.getAuthorsByBookId(req.params.id)
+    queries.Books.getAuthorsByBookId(req.params.id),
+    queries.Books.getGenres(),
+    queries.Authors.listAuthors()
   ]).
   then(function(data) {
-    res.render('books/edit-book', {book: data[0], authors: data[1]});
+    res.render('books/edit-book', {book: data[0], authors: data[1], genres:data[2], allAuthors:data[3]});
   });
-});
+})
+
+// router.get('/:id/edit/add-author-to-book', function(req,res){
+//   queries.Books.addAuthorToBook(req.params.id)
+// });
+
+// router.get('/:id/edit/:id/remove-author-from-book', function(req,res){
+//   console.log(req.params.id);
+//   return knex('author_book').where({'book_id':req.params.id})
+//   .then(function(){
+//     res.redirect('/books/edit-book')
+//   })
+// })
+
 
 router.post('/:id/edit', function(req, res){
   queries.Books.editBook(req.body, req.params.id)

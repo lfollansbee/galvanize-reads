@@ -28,14 +28,6 @@ module.exports = {
     getGenres: function(){
       return knex('genre').select()
     },
-    // addBook: function(newBook){
-    //   return knex('book').insert({
-    //     title: newBook.title,
-    //     genre_id: newBook.genre_id,
-    //     description: newBook.description,
-    //     cover_url: newBook.cover_url
-    //   });
-    // },
     getBookById: function(bookId){
       return knex('book').select('book.id', 'book.*', 'genre.name')
       .join('genre', 'genre.id', 'genre_id')
@@ -48,10 +40,17 @@ module.exports = {
       return knex('book').where({id:bookId})
       .update({
         title: bookUpdate.title,
+        genre_id:bookUpdate.genre_id,
         description: bookUpdate.description,
         cover_url: bookUpdate.cover_url
       });
     },
+    addAuthorToBook:function(bookId, authorId){
+      knex('author_book').insert({
+        book_id: bookId,
+        author_id: authorId
+      })
+    }
   },
 
   Authors:{
@@ -117,8 +116,8 @@ module.exports = {
     .insert({
       first_name: newAuthor.first_name,
       last_name: newAuthor.last_name,
-      bio: newAuthor.bio || null,
-      portrait_url: newAuthor.portrait_url || null
+      bio: newAuthor.bio,
+      portrait_url: newAuthor.portrait_url
     });
   },
     addToAuthorBook: function(newBookAuthor){

@@ -68,7 +68,7 @@ a{
 
 .book, .author{
   margin: 1vw;
-  width:50%;
+  width:60%;
 
   .list, .delete, .read{
     @include flex-justify(flex-start);
@@ -120,9 +120,10 @@ button{
 }
 
 form{
-  width: 50%;
+  width: 80%;
   label{
     margin-top: 1vw;
+    font-weight: bold;
   }
   input, label, select, textarea{
     display: block;
@@ -142,5 +143,30 @@ form{
     margin-top:0;
     margin-right: 1vw;
     width: 100%;
+  }
+}
+
+.books-author{
+  list-style:none;
+  padding-left:0;
+  // padding:.5vw;
+  // border:solid 1px gray;
+  // li{
+  //   @include flex-justify(space-between);
+  // }
+}
+
+.add-author{
+  @include flex-justify(space-between);
+  button{
+    width:100%;
+    font-size: 1rem;
+    margin:0 0 0 .5vw;
+    padding: 0;
+    background-color: $teal;
+    color:white;
+    a{
+      color:white;
+    }
   }
 }

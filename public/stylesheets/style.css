@@ -14,7 +14,7 @@ header {
     color: white; }
 
 .fa-book {
-  margin: 1rem 1rem; }
+  margin: 1rem; }
 
 main {
   display: flex;
@@ -62,30 +62,32 @@ a {
 .book, .author {
   margin: 1vw;
   width: 50%; }
+  .book .list, .book .delete, .book .read, .author .list, .author .delete, .author .read {
+    display: flex;
+    justify-content: flex-start;
+    height: auto;
+    margin-bottom: 1vw; }
+    .book .list .this-img, .book .delete .this-img, .book .read .this-img, .author .list .this-img, .author .delete .this-img, .author .read .this-img {
+      width: 10vw;
+      height: auto;
+      margin-right: 1vw; }
+    .book .list .info, .book .delete .info, .book .read .info, .author .list .info, .author .delete .info, .author .read .info {
+      width: 100%; }
+    .book .list h2, .book .delete h2, .book .read h2, .author .list h2, .author .delete h2, .author .read h2 {
+      margin-top: 0; }
+    .book .list h4, .book .delete h4, .book .read h4, .author .list h4, .author .delete h4, .author .read h4 {
+      margin: 0; }
+    .book .list a, .book .delete a, .book .read a, .author .list a, .author .delete a, .author .read a {
+      text-decoration: none;
+      color: #236367; }
+    .book .list .headings, .book .delete .headings, .book .read .headings, .author .list .headings, .author .delete .headings, .author .read .headings {
+      display: flex;
+      justify-content: space-between; }
+      .book .list .headings h2, .book .delete .headings h2, .book .read .headings h2, .author .list .headings h2, .author .delete .headings h2, .author .read .headings h2 {
+        padding-top: .25vw; }
 
-.list, .delete, .read {
-  display: flex;
-  justify-content: flex-start;
-  height: auto;
-  margin-bottom: 1vw; }
-  .list h2, .delete h2, .read h2 {
-    margin-top: 0; }
-  .list h4, .delete h4, .read h4 {
-    margin: 0; }
-  .list a, .delete a, .read a {
-    text-decoration: none;
-    color: #236367; }
-
-.this-img {
-  width: 10vw;
-  height: auto;
-  margin-right: 1vw; }
-
-.headings {
-  display: flex;
-  justify-content: space-between; }
-  .headings h2 {
-    padding-top: .25vw; }
+.authors-book {
+  margin-top: 0; }
 
 .fa-remove {
   color: red; }
@@ -113,10 +115,9 @@ form {
     display: flex;
     justify-content: flex-start;
     font-size: 1rem; }
-
-.author-name {
-  margin-top: 0;
-  margin-right: 1vw;
-  width: 100%; }
+  form .author-name {
+    margin-top: 0;
+    margin-right: 1vw;
+    width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

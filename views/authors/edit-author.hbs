@@ -18,7 +18,7 @@
 </nav>
 
 <section class="author">
-  <h3>Edit This Author's Information</h3>
+  <h3>Edit {{author.first_name}} {{author.last_name}}'s Information</h3>
   <form action="/authors/{{author.id}}/edit" method="post" class="edit-author">
     <label for="first_name">First Name</label>
       <input type="text" id="first_name" name="first_name" value="{{author.first_name}}">

@@ -12,7 +12,7 @@ header{
 }
 
 .fa-book{
-  margin: 1rem 1rem;
+  margin: 1rem;
 }
 
 main{
@@ -67,40 +67,43 @@ a{
 }
 
 .book, .author{
-  // border:1px solid red;
   margin: 1vw;
   width:50%;
+
+  .list, .delete, .read{
+    @include flex-justify(flex-start);
+    height:auto;
+    margin-bottom:1vw;
+    .this-img{
+      width: 10vw;
+      height:auto;
+      margin-right: 1vw;
+    }
+    .info{
+      width:100%;
+    }
+    h2{
+      margin-top: 0;
+    }
+    h4{
+      margin:0;
+    }
+    a{
+      text-decoration: none;
+      color:$teal;
+    }
+    .headings{
+      display: flex;
+      justify-content: space-between;
+      h2{
+        padding-top:.25vw;
+      }
+    }
+  }
 }
 
-.list, .delete, .read{
-  @include flex-justify(flex-start);
-  height:auto;
-  margin-bottom:1vw;
-  // border: 1px dashed $teal;
-  h2{
-    margin-top: 0;
-  }
-  h4{
-    margin:0;
-  }
-  a{
-    text-decoration: none;
-    color:$teal;
-  }
-}
-
-.this-img{
-  width: 10vw;
-  height:auto;
-  margin-right: 1vw;
-}
-
-.headings{
-  display: flex;
-  justify-content: space-between;
-  h2{
-    padding-top:.25vw;
-  }
+.authors-book{
+  margin-top:0;
 }
 
 .fa-remove{
@@ -135,10 +138,9 @@ form{
     @include flex-justify(flex-start);
     font-size: 1rem;
   }
-}
-
-.author-name{
-  margin-top:0;
-  margin-right: 1vw;
-  width: 100%;
+  .author-name{
+    margin-top:0;
+    margin-right: 1vw;
+    width: 100%;
+  }
 }

@@ -41,7 +41,7 @@ router.get('/:id', function(req, res, next) {
 router.get('/:id/edit', function(req, res) {
   queries.Authors.getAuthorById(req.params.id)
   .then(function(author){
-    res.render('authors/edit-author', {author:author[0]})
+    res.render('authors/edit-author', {author:author})
   })
 });
 

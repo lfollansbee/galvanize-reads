@@ -28,17 +28,19 @@
         <a href="/authors/{{id}}">
           <h2>{{first_name}} {{last_name}}</h2>
         </a>
-        <a href="/authors/{{id}}/edit">
-          <i class="fa fa-pencil"></i>
-        </a>
-        <a href="/authors/{{id}}/delete">
-          <i class="fa fa-remove"></i>
-        </a>
+        <div class="icons">
+          <a href="/authors/{{id}}/edit">
+            <i class="fa fa-pencil"></i>
+          </a>
+          <a href="/authors/{{id}}/delete">
+            <i class="fa fa-remove"></i>
+          </a>
+        </div>
       </div>
       <p class="bio">{{bio}}</p>
       <h4>Books</h4>
         {{#each this.books}}
-          <a href="/books/{{book_id}}"><p>{{title}}</p>
+          <a href="/books/{{book_id}}"><p class="authors-book">{{title}}</p>
           </a>
         {{/each}}
     </div>

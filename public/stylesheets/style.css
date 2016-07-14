@@ -87,9 +87,6 @@ a {
   .headings h2 {
     padding-top: .25vw; }
 
-.fa {
-  border: black 1px solid; }
-
 .fa-remove {
   color: red; }
 
@@ -108,5 +105,18 @@ form {
   form input, form label, form select, form textarea {
     display: block;
     width: 100%; }
+  form input {
+    font-size: 1rem; }
+  form .add-author-book-form {
+    margin-bottom: 0; }
+  form .author-on-book {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1rem; }
+
+.author-name {
+  margin-top: 0;
+  margin-right: 1vw;
+  width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

@@ -45,8 +45,14 @@ exports.seed = function(knex, Promise) {
             genre_id: findGenreId(genres, 'JavaScript'),
             description: 'No matter how much experience you have with JavaScript, odds are you don’t fully understand the language. This concise yet in-depth guide takes you inside scope and closures, two core concepts you need to know to become a more efficient and effective JavaScript programmer. You’ll learn how and why they work, and how an understanding of closures can be a powerful part of your development skillset.',
             cover_url: 'https://s3-us-west-2.amazonaws.com/assessment-images/galvanize_reads/photos/scope_and_closures.jpg'
+          }),
+          knex('book').insert({
+            title: 'You Don\'t Know JS: Async & Performance',
+            genre_id: findGenreId(genres, 'JavaScript'),
+            description: 'No matter how much experience you have with JavaScript, odds are you don’t fully understand the language. As part of the "You Don’t Know JS" series, this concise yet in-depth guide focuses on new asynchronous features and performance techniques—including Promises, generators, and Web Workers—that let you create sophisticated single-page web applications and escape callback hell in the process.',
+            cover_url: 'https://s3-us-west-2.amazonaws.com/assessment-images/galvanize_reads/photos/async_and_performance.jpg'
           })
       ]);
     });
-})
+    })
 }

@@ -18,10 +18,22 @@
 </nav>
 
 <section class="book">
-  <h3>Add a Book<h3>
+  <h3>Add a Book</h3>
   <form action="/books/new" method="post" class="add-book-form">
     <label for="title">Title</label>
       <input type="text" id="title" name="title">
+
+    <p class="add-author-book-form">Author</p>
+    <div class="author-on-book">
+      <div class="author-name">
+        <label class="author-name" for="name">First Name</label>
+        <input type="text" id="name" name="first_name">
+      </div>
+      <div class="author-name">
+        <label class="author-name" for="name">Last Name</label>
+        <input type="text" id="name" name="last_name">
+      </div>
+    </div>
 
     <label for="genre">Genre</label>
       <select id="genre" name="genre_id">

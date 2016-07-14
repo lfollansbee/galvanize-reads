@@ -23,7 +23,7 @@ router.get('/new', function(req, res) {
 });
 
 router.post('/new', function(req, res){
-  queries.Books.addBook(req.body)
+  queries.addToAuthorBook(req.body)
   .then(function(){
     res.redirect('/books');
   })
@@ -36,17 +36,26 @@ router.get('/:id', function(req, res, next) {
     queries.Books.getAuthorsByBookId(req.params.id)
   ]).
   then(function(data) {
-    // console.log('BOOK DATA:', data[0], 'AUTHOR DATA:',data[1]);
     res.render('books/read-book', {book: data[0], authors: data[1]});
   });
 });
 
 //UPDATE
-router.get('/:id/edit', function(req, res) {
-  queries.Books.getBookById(req.params.id)
-  .then(function(book){
-    res.render('books/edit-book', {book:book[0]})
-  })
+// router.get('/:id/edit', function(req, res) {
+//   queries.Books.getBookById(req.params.id)
+//   .then(function(book){
+//     res.render('books/edit-book', {book:book})
+//   })
+// });
+router.get('/:id/edit', function(req,res){
+  Promise.all([
+    queries.Books.getBookById(req.params.id),
+    queries.Books.getAuthorsByBookId(req.params.id)
+  ]).
+  then(function(data) {
+    console.log(data);
+    res.render('books/edit-book', {book: data[0], authors: data[1]});
+  });
 });
 
 router.post('/:id/edit', function(req, res){

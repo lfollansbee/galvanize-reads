@@ -59,7 +59,6 @@ exports.seed = function(knex, Promise) {
             author_id:findAuthorId(authors, 'https://s3-us-west-2.amazonaws.com/assessment-images/galvanize_reads/photos/kyle_simpson.jpg'),
             book_id: findBookId(books, 'You Don\'t Know JS: Async & Performance')
           })
-
         ]);
       })
     });

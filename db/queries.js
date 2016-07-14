@@ -28,14 +28,14 @@ module.exports = {
     getGenres: function(){
       return knex('genre').select()
     },
-    addBook: function(newBook){
-      return knex('book').insert({
-        title: newBook.title,
-        genre_id: newBook.genre_id,
-        description: newBook.description,
-        cover_url: newBook.cover_url
-      });
-    },
+    // addBook: function(newBook){
+    //   return knex('book').insert({
+    //     title: newBook.title,
+    //     genre_id: newBook.genre_id,
+    //     description: newBook.description,
+    //     cover_url: newBook.cover_url
+    //   });
+    // },
     getBookById: function(bookId){
       return knex('book').select('book.id', 'book.*', 'genre.name')
       .join('genre', 'genre.id', 'genre_id')
@@ -52,28 +52,6 @@ module.exports = {
         cover_url: bookUpdate.cover_url
       });
     },
-    editBookAddGenre: function(newBook, bookId){
-      console.log(newBook);
-      knex('genre').select().where({'name': newBook.genre}).first()
-          .then(function(genre){
-            // console.log(genre);
-            if(genre){
-              return [genre]
-            }else{
-              return knex('genre').insert({name: newBook.genre}).returning('*')
-            }
-          })
-          .then(function(newGenre){
-            console.log(newGenre);
-            var book = {
-              title: newBook.title,
-              genre_id: newGenre[0].id,
-              description: newBook.description,
-              cover_url: newBook.cover_url
-            }
-            return knex('book').where({id:bookId}).update(book)
-          })//not working yet, adds new genre, but doesn't update book
-    }
   },
 
   Authors:{
@@ -98,7 +76,6 @@ module.exports = {
   				});
   			});
     },
-
     addAuthor: function(newAuthor){
       return knex('author').insert({
         first_name: newAuthor.first_name,
@@ -124,5 +101,35 @@ module.exports = {
         bio: authorUpdate.bio
       });
     }
-  }
+  },
+
+  addBook: function(newBook){
+    return knex('book').returning('id')
+    .insert({
+      title: newBook.title,
+      genre_id: newBook.genre_id,
+      description: newBook.description,
+      cover_url: newBook.cover_url
+    });
+  },
+  addAuthorFromBook: function(newAuthor){
+    return knex('author').returning('id')
+    .insert({
+      first_name: newAuthor.first_name,
+      last_name: newAuthor.last_name,
+      bio: newAuthor.bio || null,
+      portrait_url: newAuthor.portrait_url || null
+    });
+  },
+    addToAuthorBook: function(newBookAuthor){
+      return Promise.all([
+        this.addBook(newBookAuthor),
+        this.addAuthorFromBook(newBookAuthor)
+      ]).then(function(ids){
+        return knex('author_book').insert({
+          author_id: ids[1][0],
+          book_id: ids[0][0]
+        })
+      })
+    }
 };

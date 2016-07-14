@@ -5,7 +5,7 @@ Galvanize Reads is a book catalog service that stores a list of recommended tech
 ##Installation
 
 * Set up a postgres database
-* Create a `.env` file
+* Create a `.env` file.  Refer to env.example file to include your database url.
 * `npm install -g knex`
 * `npm install`
 * `knex migrate:latest`

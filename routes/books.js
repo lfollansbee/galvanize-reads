@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
     });
 });
 
-//CREATE
+
 router.get('/new', function(req, res) {
   queries.Books.getGenres()
   .then(function(genres){
@@ -29,7 +29,7 @@ router.post('/new', function(req, res){
   })
 })
 
-//READ
+
 router.get('/:id', function(req, res, next) {
   Promise.all([
     queries.Books.getBookById(req.params.id),
@@ -40,7 +40,7 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
-//UPDATE
+
 router.get('/:id/edit', function(req,res){
   Promise.all([
     queries.Books.getBookById(req.params.id),
@@ -52,18 +52,6 @@ router.get('/:id/edit', function(req,res){
   });
 })
 
-// router.get('/:id/edit/add-author-to-book', function(req,res){
-//   queries.Books.addAuthorToBook(req.params.id)
-// });
-
-// router.get('/:id/edit/:id/remove-author-from-book', function(req,res){
-//   console.log(req.params.id);
-//   return knex('author_book').where({'book_id':req.params.id})
-//   .then(function(){
-//     res.redirect('/books/edit-book')
-//   })
-// })
-
 router.post('/:id/edit', function(req, res){
   queries.Books.editBook(req.body, req.params.id)
   .then(function(){
@@ -71,7 +59,7 @@ router.post('/:id/edit', function(req, res){
   })
 })
 
-//DELETE
+
 router.get('/:id/delete', function(req,res){
   Promise.all([
     queries.Books.getBookById(req.params.id),

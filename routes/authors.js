@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
     });
 });
 
-//CREATE
+
 router.get('/new', function(req, res) {
     res.render('authors/add-author');
 });
@@ -26,7 +26,7 @@ router.post('/new', function(req, res){
   })
 })
 
-//READ
+
 router.get('/:id', function(req, res, next) {
   Promise.all([
     queries.Authors.getAuthorById(req.params.id),
@@ -37,7 +37,7 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
-//UPDATE
+
 router.get('/:id/edit', function(req, res) {
   queries.Authors.getAuthorById(req.params.id)
   .then(function(author){
@@ -52,7 +52,7 @@ router.post('/:id/edit', function(req, res){
   })
 })
 
-//DELETE
+
 router.get('/:id/delete', function(req, res) {
   Promise.all([
     queries.Authors.getAuthorById(req.params.id),

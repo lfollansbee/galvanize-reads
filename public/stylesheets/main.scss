@@ -21,7 +21,6 @@ main{
 
 nav{
   margin:1vw;
-  // border: solid 1px black;
   display:flex;
   flex-direction: column;
   figure{
@@ -31,6 +30,10 @@ nav{
     border: solid 1px $teal;
     padding:.5vw;
     margin:1vw 0;
+    color:$teal;
+    &:hover{
+      color: $light-teal;
+    }
     a{
       text-decoration: none;
       color: $teal;
@@ -42,8 +45,8 @@ nav{
 }
 
 .vertical{
--webkit-transform: rotateZ(270deg); /* Safari */
-transform: rotateZ(270deg); /* Standard syntax */
+-webkit-transform: rotateZ(270deg);
+transform: rotateZ(270deg);
 }
 
 .index{
@@ -118,6 +121,10 @@ button{
   padding: 1rem 0;
   background-color: $teal;
   color:white;
+  border: none;
+  &:hover{
+    background-color: $light-teal;
+  }
 }
 
 form{
@@ -150,11 +157,6 @@ form{
 .books-author{
   list-style:none;
   padding-left:0;
-  // padding:.5vw;
-  // border:solid 1px gray;
-  // li{
-  //   @include flex-justify(space-between);
-  // }
 }
 
 .add-author{

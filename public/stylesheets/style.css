@@ -2,6 +2,9 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cutive', serif; }
 
+button {
+  font-family: 'Cutive', serif; }
+
 html {
   box-sizing: border-box; }
 
@@ -30,7 +33,10 @@ nav {
     align-items: center;
     border: solid 1px #236367;
     padding: .5vw;
-    margin: 1vw 0; }
+    margin: 1vw 0;
+    color: #236367; }
+    nav figure:hover {
+      color: #23939a; }
     nav figure a {
       text-decoration: none;
       color: #236367; }
@@ -39,9 +45,7 @@ nav {
 
 .vertical {
   -webkit-transform: rotateZ(270deg);
-  /* Safari */
-  transform: rotateZ(270deg);
-  /* Standard syntax */ }
+  transform: rotateZ(270deg); }
 
 .index {
   width: 100%;
@@ -99,7 +103,10 @@ button {
   margin: 1vw 0;
   padding: 1rem 0;
   background-color: #236367;
-  color: white; }
+  color: white;
+  border: none; }
+  button:hover {
+    background-color: #23939a; }
 
 form {
   width: 80%; }
